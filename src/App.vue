@@ -3,7 +3,7 @@
     <AtomTextLogo v-if="isLoading" text="Luiz Albuquerque"/>
      <OrganismHeader  v-if="!isLoading" />
     <v-main
-      class=""
+      class="py-0"
        v-if="!isLoading"
     >
       <v-row justify="center" class="mx-1">
