@@ -95,12 +95,6 @@ export default {
       }
       this.$vuetify.goTo(id, options)
     },
-
-    logout() {
-      this.$store.dispatch("setLogged", false);
-      this.$store.dispatch("setUser", null);
-      this.goToLogin();
-    }
   },
   watch: {
     group () {
