@@ -4,8 +4,10 @@ set -e
 npm run build
 
 cd dist
+
+git init
 git add -A
-git commit -m "new deployment"
-git push -f git@github.com:luizAlbuquerqueJr/portifolio.git master:pages
+git commit -m 'New Deployment'
+git push -f git@github.com:luizAlbuquerqueJr/portfolio.git master:page
 
 cd -
