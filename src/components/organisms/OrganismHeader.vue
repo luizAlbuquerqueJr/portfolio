@@ -62,7 +62,7 @@
 
 <script>
 import AtomLink from '../atoms/AtomsLink.vue'
-export default {
+export default {  
   name: 'OrganismHeader',
   props:{
     isLoading: {
@@ -90,6 +90,7 @@ export default {
   },
   methods:{
     goToTarget(id){
+      this.$store.dispatch('amplitudeEmit', {eventType:`user clicked at luiz Albuquerque`})  
       const options = {
         duration: 1000,
       }

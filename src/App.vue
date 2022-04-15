@@ -68,12 +68,13 @@ import AtomTextLogo from './components/atoms/textLogo.vue'
     isLoading: true,
     //
   }),
-  created(){
+  async created(){
+    await this.$store.dispatch('initAmplitude')
+    this.$store.dispatch('amplitudeEmit', {eventType:'user viewed the page'})
     setTimeout(() => 
     {
-      console.log("aeeeeeeeeeeeee")
       this.isLoading = false
-    }, 1000)
+    }, 5000)
   },
   methods:{
     goToLogin(){

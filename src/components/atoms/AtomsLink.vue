@@ -22,6 +22,7 @@
     },
     methods : {
       goToTarget(id){
+        this.$store.dispatch('amplitudeEmit', {eventType:`user clicked to ${id}`})  
         const options = {
           duration: 1000,
         }
