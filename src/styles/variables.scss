@@ -1,0 +1,57 @@
+$body-font-family: 'Inter', sans-serif;
+$body-font-color: "red";
+$body-color: "red";
+$heading-font-family: 'Inter', sans-serif;
+
+$primaryColor: #8692af;
+// $secondaryColor: red;
+$secondaryColor: #00d3b9;
+$highlightedColor: #cad7f5;
+$themePrimaryColor: #07192d;
+$themeSecondaryColor: #0d233f;
+
+
+$material-ligth: (
+  'background': #0A0025,
+  'picker': (
+    'body': #0A0025,
+  ),
+  'cards': #0A0025,
+);
+body {
+  background-color: #07192d;
+  color: #0A0025; 
+  $body-font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,p,span,body {
+  color: #8692af; 
+  font-family: 'Roboto';
+  font-size: clamp(12px, 5vw, 20px);
+}
+
+.primaryColor{
+  color:$primaryColor
+}
+.secondaryColor{
+  color: $secondaryColor
+}
+.highlightedColor{
+  color: $highlightedColor
+}
+.bg-primaryColor{
+  background-color: $primaryColor !important
+}
+.bg-secondaryColor{
+  background-color: $secondaryColor !important
+}
+.bg-accent{
+  background-color: $highlightedColor !important
+}
+
+.bg-themeSecondaryColor{
+  background-color: $themeSecondaryColor !important
+}
+.bg-themePrimaryColor{
+  background-color: $themePrimaryColor !important
+}
