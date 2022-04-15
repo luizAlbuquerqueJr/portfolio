@@ -22,12 +22,8 @@
   }
 </script>
 <style scoped>
-.topicFontSize {
-  /* width: fit-content; */
-  font-size:32px;
-}
 .topicText{
-  font-size:32px;
+  font-size: clamp(20px, 5.333vw, 32px);
   width: fit-content;
   height: 100%;
   display: inline;
@@ -37,5 +33,4 @@
   height: 1px;
   background-color:#233552
 }
-
 </style>
