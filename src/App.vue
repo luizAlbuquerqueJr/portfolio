@@ -1,7 +1,7 @@
 <template>
   <v-app style="background: #07192e">
     <AtomTextLogo v-if="isLoading" text="Luiz Albuquerque"/>
-     <OrganismHeader  v-if="!isLoading" />
+     <OrganismHeader :isLoading="isLoading"/>
     <v-main
       class="py-0"
        v-if="!isLoading"

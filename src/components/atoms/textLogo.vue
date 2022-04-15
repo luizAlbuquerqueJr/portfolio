@@ -2,7 +2,7 @@
   <div class="patterns">
     <svg width="100%" height="100%">
         <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)"> </rect>   
-        <text x="50%" y="50%"  text-anchor="middle">
+        <text x="50%" y="50%"  text-anchor="middle" :style="svgText">
             {{text}}
         </text>
     </svg>
@@ -18,26 +18,37 @@ export default {
         default: ''
       }
   },
-  created() {
-    console.log(this.collapse)
-    console.log(this.$vuetify.breakpoint.smAndDown)
-  },
 
   data() {
     return {
       drawer: false,
       group: null,
       options : {
-          duration: 100,
-          // offset: this.offset,
-          // easing: this.easing,
+          duration: 100
       },
     }
   },
   computed: {
     collapse() {
       return this.$vuetify.breakpoint.smAndDown
-    } 
+    },
+    svgText() {
+      const width = this.$vuetify.breakpoint.width
+      
+      let style = {
+        "font-family": "Lora",
+        "stroke": "#00d3b9",
+        "font-size": "clamp(30px,8vw,150px)",
+      }
+      if(width < 500){
+        style["letter-spacing"] = "5px"
+        style["stroke-width"] = 2
+      }else{
+        style["letter-spacing"] = "10px"
+        style["stroke-width"] = 5
+      }
+      return style
+    }
   },
   methods:{
     goToTarget(id){
@@ -62,19 +73,12 @@ export default {
 </script>
 <style scoped>
  .patterns {
-  height: 100vh;
+  height: 100%;
 }
 
 
 
 svg text {
-  font-family: Lora;
-  letter-spacing: 10px;
-  stroke: #00d3b9;
-  font-size: 20px;
-  font-size: clamp(15px,8vw,150px);
-  font-weight: 700;
-  stroke-width: 5;
   animation: textAnimate 8s;
 }
 .textEffect{
@@ -89,25 +93,11 @@ svg text {
 
   }
 
-  /* 50% {
-    stroke-dasharray: 50% 0;
-    stroke-dashoffstet: -20%;
-    fill: #00d3b9;
-    font-size: clamp(15px,8vw,150px);
-  }
-  
-  75% {
-    stroke-dasharray: 50% 0;
-    stroke-dashoffstet: -20%;
-    fill: #00d3b9;
-  } 
-  */
 
   100% {
     stroke-dasharray: 50% 0;
     stroke-dashoffstet: -20%;
     fill: #00d3b9;
-    /* font-size:20px; */
   }
   
 }

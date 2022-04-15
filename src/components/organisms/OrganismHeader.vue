@@ -9,8 +9,7 @@
       <!-- <v-app-bar-nav-icon  v-if="collapse"></v-app-bar-nav-icon> -->
       <v-app-bar-nav-icon v-if="collapse" @click="drawer = !drawer"></v-app-bar-nav-icon>
       <div v-if="!collapse" style="width:100%; display:flex; justify-content: space-between; align-items: center;">
-        <h2 class="secondaryColor" @click="goToTarget(0)">Luiz Albuquerque</h2>
-          
+        <h2 v-if="!isLoading" class="secondaryColor" @click="goToTarget(0)">Luiz Albuquerque</h2>
         <v-spacer />
         <div class="mr-5" style="width:700px; display:flex; justify-content: space-between; align-items: center">
           <AtomLink number=1 text="Sobre" goTo="#about"/>
@@ -65,12 +64,14 @@
 import AtomLink from '../atoms/AtomsLink.vue'
 export default {
   name: 'OrganismHeader',
+  props:{
+    isLoading: {
+      type: Boolean,
+      default: false,
+    }
+  },
   components: {
     AtomLink
-  },
-  created() {
-    console.log(this.collapse)
-    console.log(this.$vuetify.breakpoint.smAndDown)
   },
 
   data() {
@@ -78,9 +79,7 @@ export default {
       drawer: false,
       group: null,
       options : {
-          duration: 100,
-          // offset: this.offset,
-          // easing: this.easing,
+          duration: 100
       },
     }
   },
