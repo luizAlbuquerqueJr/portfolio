@@ -62,6 +62,7 @@
 
 <script>
 import AtomLink from '../atoms/AtomsLink.vue'
+import utils from '../../utils/index'
 export default {  
   name: 'OrganismHeader',
   props:{
@@ -90,7 +91,7 @@ export default {
   },
   methods:{
     goToTarget(id){
-      this.$store.dispatch('amplitudeEmit', {eventType:`user clicked at luiz Albuquerque`})  
+      utils.amplitudeEmit({eventType:`user clicked at luiz Albuquerque`})
       const options = {
         duration: 1000,
       }

@@ -49,6 +49,7 @@ import OrganismAbout from './components/organisms/OrganismAbout.vue';
 import OrganismMyWorks from './components/organisms/OrganismMyWorks.vue';
 import OrganismContact from './components/organisms/OrganismContact.vue';
 import AtomTextLogo from './components/atoms/textLogo.vue'
+import utils from './utils/index.js'
   export default {
   name: 'App',
   components:{
@@ -69,8 +70,7 @@ import AtomTextLogo from './components/atoms/textLogo.vue'
     //
   }),
   async created(){
-    await this.$store.dispatch('initAmplitude')
-    this.$store.dispatch('amplitudeEmit', {eventType:'user viewed the page'})
+    utils.amplitudeEmit({eventType:'user viewed the page'})
     setTimeout(() => 
     {
       this.isLoading = false

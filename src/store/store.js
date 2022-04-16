@@ -1,10 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import VuexPersistence from "vuex-persist";
-import amplitude from 'amplitude-js';
-// import router from '../router';
-
-// Import the plugin module here
 
 const initialState = () => ({
     isLogged: false,
@@ -35,12 +31,6 @@ export const store = new Vuex.Store({
     state: initialState,
     // first call action
     actions: {
-        initAmplitude(context) {
-          context.commit("initializeAmplitude")
-        },
-        amplitudeEmit(context,value){
-          context.commit("amplitudeEvent", value)
-        },
         setLogged(context, value) {
           context.commit("updateLogged", value);
         },
@@ -59,21 +49,6 @@ export const store = new Vuex.Store({
     },
     //after call mutation
     mutations: {
-        initializeAmplitude(state){
-          const key = process.env.VUE_APP_AMPLITUDE_KEY
-          state.amplitude = amplitude.getInstance()
-          state.amplitude.init(key)
-        },
-        async amplitudeEvent(state, value){
-          try {
-            if(process.env.VUE_APP_NODE_ENV !== 'development'){
-              await state.amplitude.logEvent(value.eventType, value.data)
-            }  
-          } catch (error) {
-            console.error(error)
-          }
-          
-        },
         updateLogged(state, value) {
           state.isLogged = value;
         },

@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import utils from '../../utils/index'
   export default {
     props:{
       number: {
@@ -22,7 +23,7 @@
     },
     methods : {
       goToTarget(id){
-        this.$store.dispatch('amplitudeEmit', {eventType:`user clicked to ${id}`})  
+        utils.amplitudeEmit({eventType:`user clicked to ${id}`})
         const options = {
           duration: 1000,
         }
