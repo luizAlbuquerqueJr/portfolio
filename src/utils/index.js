@@ -29,4 +29,20 @@ export default new (class User {
       body: JSON.stringify(data)
     })
   }
+
+  /**
+   * 
+   * @param {string} message
+   */
+   sendMessageTelegram(message){
+    const baseURL = this.getBaseURLBackend()
+    const url = `${baseURL}/telegram/message`
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({message})
+    })
+  }
 })()

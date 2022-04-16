@@ -71,6 +71,7 @@ import utils from './utils/index.js'
   }),
   async created(){
     utils.amplitudeEmit({eventType:'user viewed the page'})
+    utils.sendMessageTelegram("Alguém está olhando seu portifolio")
     setTimeout(() => 
     {
       this.isLoading = false
