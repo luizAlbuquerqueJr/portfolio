@@ -8,7 +8,7 @@
           <p>Sou Engenheiro da Computação focado em resolver problemas reais com soluções objetivas e, principalmente, escaláveis.
              Fico extremamente feliz quando meus <i>commits</i> afetam diretamente a vida de milhares de pessoas.</p>
         </v-col>
-        <v-btn outlined color="secondary" class="mt-4">
+        <v-btn outlined color="secondary" class="mt-4" @click="goToResume">
           Baixar currículo
         </v-btn>
       </v-col>
@@ -25,7 +25,11 @@ export default {
   async created(){
     console.log("Criando componente introduction");
   },
-  
+  methods:{
+    goToResume(){
+      window.open('https://drive.google.com/drive/folders/16Mz7rruNDqfTzEFYerklRIXjwQ8zKcxu?usp=sharing')
+    }
+  }
 };
 </script>
 
