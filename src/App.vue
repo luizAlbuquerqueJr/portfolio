@@ -6,16 +6,6 @@
       class="py-0"
        v-if="!isLoading"
     >
-      <v-row justify="center" class="mx-1">
-        <v-col cols="12" xs=12 sm=10 md=9 lg=8 xl=7>
-          <OrganismIntroduction class="screen"/>
-          <OrganismAbout class="screen" id="about"/>
-          <OrganismMySkills class="screen" id="mySkill"/>
-          <OrganismMyWorks class="screen" id="myWorks"/>
-          <OrganismMyProjects class="screen" id="myProjects"/>
-          <OrganismContact class="screen" id="contact"/>
-        </v-col>
-      </v-row>
       <v-snackbar
         v-model="$store.state.showAlert"
         top
@@ -42,25 +32,13 @@
 <script>
 import router from "./router";
 import OrganismHeader from './components/organisms/OrganismHeader.vue';
-import OrganismIntroduction from './components/organisms/OrganismIntroduction.vue';
-import OrganismMySkills from './components/organisms/OrganismMySkills.vue';
-import OrganismMyProjects from './components/organisms/OrganismMyProjects.vue'
-import OrganismAbout from './components/organisms/OrganismAbout.vue';
-import OrganismMyWorks from './components/organisms/OrganismMyWorks.vue';
-import OrganismContact from './components/organisms/OrganismContact.vue';
 import AtomTextLogo from './components/atoms/textLogo.vue'
 import utils from './utils/index.js'
   export default {
   name: 'App',
   components:{
     OrganismHeader,
-    AtomTextLogo,
-    OrganismIntroduction,
-    OrganismMySkills,
-    OrganismMyProjects,
-    OrganismAbout,
-    OrganismMyWorks,
-    OrganismContact
+    AtomTextLogo
   },
 
   data: () => ({
