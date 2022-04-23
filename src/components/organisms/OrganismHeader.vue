@@ -35,24 +35,24 @@
           v-model="group"
           active-class="deep-purple--text text--accent-4"
         >
-          <v-list-item>
-            <v-list-item-title><AtomLink number=1 text="Sobre" goTo="#about"/></v-list-item-title>
+          <v-list-item  @click="goToTarget('#about')">
+            <v-list-item-title><AtomLink number=1 text="Sobre"/></v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
-            <v-list-item-title><AtomLink number=2 text="Habilidades" goTo="#mySkill"/></v-list-item-title>
+          <v-list-item  @click="goToTarget('#mySkill')">
+            <v-list-item-title><AtomLink number=2 text="Habilidades"/></v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
-            <v-list-item-title><AtomLink number=3 text="Experiências" goTo="#myWorks"/></v-list-item-title>
+          <v-list-item  @click="goToTarget('#myWorks')">
+            <v-list-item-title><AtomLink number=3 text="Experiências"/></v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
-            <v-list-item-title><AtomLink number=4 text="Projetos" goTo="#myProjects"/></v-list-item-title>
+          <v-list-item  @click="goToTarget('#myProjects')">
+            <v-list-item-title><AtomLink number=4 text="Projetos"/></v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
-            <v-list-item-title><AtomLink number=5 text="Contato" goTo="#contact"/></v-list-item-title>
+          <v-list-item  @click="goToTarget('#contact')">
+            <v-list-item-title><AtomLink number=5 text="Contato"/></v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -91,12 +91,13 @@ export default {
   },
   methods:{
     goToTarget(id){
-      utils.amplitudeEmit({eventType:`user clicked at luiz Albuquerque`})
+      setTimeout(() => this.$vuetify.goTo(id, options), 0)
       const options = {
-        duration: 1000,
-      }
-      this.$vuetify.goTo(id, options)
-    },
+          duration: 1000,
+        }
+      let eventType = id == 0 ? `user clicked Luiz Albuquerque` : `user clicked to ${id}`
+      utils.amplitudeEmit({eventType})
+    }
   },
   watch: {
     group () {

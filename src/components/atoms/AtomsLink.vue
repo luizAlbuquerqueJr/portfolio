@@ -23,11 +23,13 @@ import utils from '../../utils/index'
     },
     methods : {
       goToTarget(id){
-        utils.amplitudeEmit({eventType:`user clicked to ${id}`})
-        const options = {
-          duration: 1000,
+        if(id){
+          utils.amplitudeEmit({eventType:`user clicked to ${id}`})
+          const options = {
+            duration: 1000,
+          }
+          this.$vuetify.goTo(id, options)
         }
-        this.$vuetify.goTo(id, options)
       }
     }
   }
