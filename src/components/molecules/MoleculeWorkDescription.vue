@@ -5,6 +5,10 @@
 </template>
 
 <script>
+import utils from "../../utils/index.js"
+  window.openLink = (link) => {
+    utils.openLink(link)
+  }
   export default {
     props:{
       description: {
@@ -24,11 +28,10 @@
                         let [text ,url] = link.split('|')
                         text = text.replace(/#link#/g,'')
                         url = url.replace(/#link#/g,'')
-                        console.log(text,url)
-                        backup = backup.replace(link,`<a class="highlightedColor" href="${url}">${text}</a>`)
+                        backup = backup.replace(link,`<a class="highlightedColor" onClick="window.openLink('${url}')" >${text}</a>`)
                     }
                 }
-                temp += `<p class="highlightedColor">&loz; ${backup}</p>`
+                temp += `<p class="highlightedColor"><span  class="secondaryColor">&diams;</span> ${backup}</p>`
             }
             return temp
         } 
@@ -37,21 +40,6 @@
 
 </script>
 <style scoped>
-.topicFontSize {
-  /* width: fit-content; */
-  font-size:32px;
-}
-.topicText{
-  font-size:32px;
-  width: fit-content;
-  height: 100%;
-  display: inline;
-}
-.topicLine{
-  width: 100%;
-  height: 1px;
-  background-color:#233552
-}
 
 </style>
 

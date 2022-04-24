@@ -3,86 +3,117 @@
       <v-col class="text-start" align-self="start" cols=12>
         <MoleculeTopic number="02" text="Minhas ferramentas"/>
       </v-col>
-      <v-col cols="12" > 
-        <v-tabs 
-          v-if="$vuetify.breakpoint.smAndUp"
-          vertical 
-          color='secondary'
-          background-color="primary"
-          v-model="tab"
-          style="border: 1px solid #30d2b9"
-          class="pa-2"> 
-          <v-tab 
-          v-for="item in items"
-          :key="item.title">
-            {{item.title}}
-          </v-tab>
-          <v-tabs-slider color="secondary"></v-tabs-slider>
-          <v-tabs-items  v-model="tab" style="background: #07192e">
-            <v-tab-item
-            v-for="(item,i) in items"
-            :key="i">
-              <p class="ml-4">
-                {{item.description}}
-              </p>
-            </v-tab-item>
-          </v-tabs-items>
-        </v-tabs>
-        <v-row v-else>
-          <v-col v-for="(item,i) in items" :key="i" cols=12>
-            <h3 class="secondaryColor">{{item.title}}</h3>
-            <p>{{item.description}}</p>
-          </v-col>
-        </v-row>
+      <v-col cols="12">
+        <MoleculeTools name="Front-end" :tools="toolsFrontEnd"/>
+        <MoleculeTools class="my-10" name="Back-end" :tools="toolsBackEnd"/>
+        <MoleculeTools class="my-10" name="Ciência dos dados e Inteligência Artificial" :tools="toolsIA"/>
+        <MoleculeTools class="my-10" name="Sistemas Embarcados" :tools="toolsEmbedded"/>
+        <MoleculeTools class="my-10" name="Testes" :tools="toolsTests"/>
       </v-col>
+        
   </v-row>
 </template>
 
 <script>
 import MoleculeTopic from "../molecules/MoleculeTopic.vue"
+import MoleculeTools from "../molecules/MoleculeTools.vue"
 export default {
   components:{
-    MoleculeTopic
+    MoleculeTopic,
+    MoleculeTools
   },
   data () {
       return {
-        tab: null,
-        items: [
+        toolsTests: [
+          {
+            title:" Mocha js"
+          },
+          {
+            title:" Sinon"
+          },
+        ],
+        toolsBackEnd: [
           {
             title:'Node',
-            description: "Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz "
           },
           {
-            title:'JavaScript',
-            description: "Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz "
+            title:'NestJS',
           },
           {
-            title:'Python3',
-            description: "Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz "
+            title:'TypeScript',
           },
           {
-            title:'CSS',
-            description: "Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz "
+            title:'Python 3',
           },
           {
-            title:'HTML',
-            description: "Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz "
+            title:'Sequelize',
           },
           {
-            title:'Vue',
-            description: "Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz Luiz "
+            title:'MYSQL',
+          },
+          {
+            title:'Firebase',
+          },
+        ],
+        toolsEmbedded: [
+          {
+            title:'Arduino',
+          },
+          {
+            title:'Raspberry',
+          },
+          {
+            title:'C++'
+          },
+          {
+            title:'Sigfox'
+          },
+        ],
+        toolsIA : [
+          {
+            title:'Python'
+          },
+          {
+            title:'SK Learn'
+          },
+          {
+            title:'Pandas'
+          },
+          {
+            title:'Keras'
+          },
+          {
+            title:'Numpy'
+          }
+        ],
+        toolsFrontEnd: [
+          {
+            title:'Vue'
+          },
+          {
+            title:'Vuetify'
+          },
+          {
+            title:'Cordova'
+          },
+          {
+            title:'React'
+          },
+          {
+            title:'JavaScript'
+          },
+          {
+            title:'CSS'
+          },
+          {
+            title:'HTML'
           },
         ],
         text: 'Lorem ipsum',
       }
-  },
-  async created(){
-    console.log("Criando componente about");
-  },
-  
+  }
 };
 </script>
-
 
 <style scoped>
   

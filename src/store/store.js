@@ -56,10 +56,10 @@ export const store = new Vuex.Store({
           state.user = {...value};
         },
         updateAlert(state, value) {
-            console.log(value);
             state.messageAlert = value.message;
             state.colorAlert = value.color;
             state.showAlert = true
+            // window.setTimeout(()=>state.showAlert = false, 3000)
         },
         updateShowDialogCollaborator(state,value){
           state.showDialogCollaborator = value

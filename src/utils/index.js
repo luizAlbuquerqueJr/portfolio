@@ -4,6 +4,10 @@ export default new (class User {
     this._list = null
   }
 
+  openLink(link){
+    window.open(link)
+    this.amplitudeEmit({eventType: `user clicked at ${link}`})
+  }
   getBaseURLBackend(){
       if(process.env.NODE_ENV === 'production'){
           return 'https://portfolio-api-luiz-albuquerque.herokuapp.com/api/v1'

@@ -7,11 +7,11 @@
           <p>Olá gente! Conforme dito na seção acima, meu nome é Luiz e <span class="highlightedColor">me considero um apaixonado por tecnologia</span>. Existem 2 bons motivos para isso. </p>
             <span class="secondaryColor">01. Ajudar o próximo</span> <p> Acredito que a tecnologia( especialmente a programação) é a forma mais acessível para um indivíduo resolver algum problema de maneira escalável.
             Com alguns dias de desenvolvimento e relativamente pouco investimento financeiro já é possível criar um projeto que ajude dezenas, centenas ou milhares de pessoas.
-            Observe, porém, que em nenhum momento eu disse que essa é uma tarefa fácil. <span  class="highlightedColor"> Por essa razão sempre estou em constante aprendizagem</span></p>
+            Observe, porém, que em nenhum momento eu disse que essa é uma tarefa fácil. <span  class="highlightedColor"> Por essa razão sempre estou em constante aprendizagem.</span></p>
             <span class="secondaryColor">02. Engenhocas</span> 
             <p>Sim, você não leu errado. Sempre fui a criança que desmontava seus próprios brinquedos e uma vez desmontado nunca mais voltava ao normal... 
             Tempo passou, eu cresci, hoje me debruço sobre os diversos códigos e engenhocas encontradas na internet. Tenho espírito <i>maker</i>, ou seja, 
-            <span  class="highlightedColor">sempre tenho um projeto pessoal em mente.</span> </p>
+            <span  class="highlightedColor">sempre tenho um projeto tecnológico em mente.</span> </p>
 
         </v-col>
         <v-col cols="12" md="5" class="centerItem">
@@ -27,13 +27,8 @@ export default {
     MoleculeTopic
   },
   data: () => ({
-    //
     skills: undefined
   }),
-  async created(){
-    console.log("Criando componente about");
-  },
-  
 };
 </script>
 

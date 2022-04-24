@@ -9,13 +9,15 @@
       <v-snackbar
         v-model="$store.state.showAlert"
         top
+        tile
         :color="$store.state.colorAlert"
+        timeout=2000
       >
-        {{ $store.state.messageAlert }}
+        <p>{{ $store.state.messageAlert }}</p>
 
         <template v-slot:action="{ attrs }">
           <v-btn
-            color="#9f3dee"
+            color="#cad7f5"
             text
             v-bind="attrs"
             @click="$store.state.showAlert = false"
@@ -48,6 +50,7 @@ import utils from './utils/index.js'
     //
   }),
   async created(){
+    document.title = "Luiz Albuquerque"
     utils.amplitudeEmit({eventType:'user viewed the page'})
     utils.sendMessageTelegram("Alguém está olhando seu portifolio")
     setTimeout(() => 

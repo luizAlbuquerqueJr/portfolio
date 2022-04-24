@@ -5,11 +5,12 @@
       app
       color="#07192e"
       dark
+      hide-on-scroll
     >
       <!-- <v-app-bar-nav-icon  v-if="collapse"></v-app-bar-nav-icon> -->
       <v-app-bar-nav-icon v-if="collapse" @click="drawer = !drawer"></v-app-bar-nav-icon>
       <div v-if="!collapse" style="width:100%; display:flex; justify-content: space-between; align-items: center;">
-        <h2 v-if="!isLoading" class="secondaryColor" @click="goToTarget(0)">Luiz Albuquerque</h2>
+        <h2 v-if="!isLoading" class="secondaryColor cursorPoint" @click="goToTarget(0)">Luiz Albuquerque</h2>
         <v-spacer />
         <div class="mr-5" style="width:700px; display:flex; justify-content: space-between; align-items: center">
           <AtomLink number=1 text="Sobre" goTo="#about"/>
@@ -55,6 +56,7 @@
             <v-list-item-title><AtomLink number=5 text="Contato"/></v-list-item-title>
           </v-list-item>
         </v-list-item-group>
+        <p class="text-end">Portifolio feito com <v-icon small color="accent"> mdi-heart </v-icon> pelo próprio autor</p>
       </v-list>
     </v-navigation-drawer> 
     </v-container>
@@ -107,6 +109,11 @@ export default {
 };
 </script>
 <style scoped>
+  .text-end{
+    position: absolute;
+    bottom: 0px;
+    font-size: 13px
+  }
   .navigationPortifolio{
     position: fixed;
     width: 256px;
